@@ -123,6 +123,95 @@
  .hambar:nth-child(3) {
      bottom: 1.8rem;
  }
+ /* Hero */
+ #hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    position: relative;
+    z-index: 2;
+ }
+ #hero::after{
+    content: '';
+    width: 100%;
+    height: 50%;
+    background-color: var(--orange);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+ }
+ .hero-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 0;
+ }
+ .hero-header h1{
+    font-size: 6rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 1.5rem 0;
+ }
+ .hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1150px;
+ }
+ .hero-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    margin: 1.5rem 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+ }
+ .hero-box::after{
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    transition: all .3s ease;
+ }
+ .hero-box:hover::after{
+    background-color: rgba(0, 0, 0, 0.389);
+ }
+ .hero-box:hover img{
+    transform: scale(1.1);
+ }
+ .hero-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease;
+ }
+ @media screen and (max-width:1170px) {
+    .hero-box {
+        width: 282px;
+        height: 282px;
+    }
+    .hero {
+        width: 940px;
+    }
+ }
+ @media screen and (max-width:970px) {
+    .hero {
+        width: auto;
+        margin: 0 2rem;
+    }
+    .hero-header {
+        padding: 5rem 2rem;
+    }
+ }
  @media screen and (max-width:940px) {
     nav ul {
         width: 80%;
@@ -133,11 +222,23 @@
         margin-right: 6rem;
     }
  }
- @media screen and (max-width:0) {
-    
+ @media screen and (max-width:650px) {
+    .hero-box {
+        width: 68%;
+        height: 32vh;
+    }
+    .hero-header h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 1.5rem 0;
+    }
  }
- @media screen and (max-width:0) {
-    
+ @media screen and (max-width:500px) {
+    .hero-box {
+        width: 90%;
+        height: 32vh;
+    }
  }
  @media screen and (max-width:0) {
  
