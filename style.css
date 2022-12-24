@@ -123,123 +123,253 @@
  .hambar:nth-child(3) {
      bottom: 1.8rem;
  }
+
  /* Hero */
- #hero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10rem 0;
-    position: relative;
-    z-index: 2;
+ #hero {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding: 10rem 0;
+     position: relative;
+     z-index: 2;
  }
- #hero::after{
-    content: '';
-    width: 100%;
-    height: 50%;
-    background-color: var(--orange);
-    position: absolute;
-    top: 0;
-    z-index: -1;
+
+ #hero::after {
+     content: '';
+     width: 100%;
+     height: 50%;
+     background-color: var(--orange);
+     position: absolute;
+     top: 0;
+     z-index: -1;
  }
- .hero-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 5rem 0;
+
+ .hero-header {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+     padding: 5rem 0;
  }
- .hero-header h1{
-    font-size: 6rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 1.5rem 0;
+
+ .hero-header h1 {
+     font-size: 6rem;
+     font-weight: 700;
+     color: #fff;
+     margin: 1.5rem 0;
  }
- .hero{
+
+ .hero {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     width: 1150px;
+ }
+
+ .hero-box {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     width: 350px;
+     height: 350px;
+     margin: 1.5rem 1.5rem;
+     cursor: pointer;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .hero-box::after {
+     width: 100%;
+     height: 100%;
+     content: '';
+     position: absolute;
+     transition: all .3s ease;
+ }
+
+ .hero-box:hover::after {
+     background-color: rgba(0, 0, 0, 0.389);
+ }
+
+ .hero-box:hover img {
+     transform: scale(1.1);
+ }
+
+ .hero-box img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: all .3s ease;
+ }
+
+ /* Flip */
+ #flip {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 7rem 0;
+     background-color: var(--orange);
+ }
+
+ .flip-box-ourter:hover .flip-box {
+     transform: rotateY(180deg);
+ }
+
+ @keyframes flip {
+    50%{
+         transform: rotateY(180deg);
+    }
+ }
+.flip{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 1150px;
+}
+
+ .flip-box {
+     position: relative;
+     width: 300px;
+     height: 400px;
+     transform-style: preserve-3d;
+     border-radius: 10px;
+     transition: all .4s ease;
+     cursor: pointer;
+     margin: 1.5rem 1.5rem;
  }
- .hero-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 350px;
-    height: 350px;
-    margin: 1.5rem 1.5rem;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
+
+.flip-box-ourter:nth-child(1) .flip-box{
+    animation: flip 4s ease infinite 2s;
+}
+.flip-box-ourter:nth-child(2) .flip-box{
+    animation: flip 4s ease infinite 2s;
+}
+.flip-box-ourter:nth-child(3) .flip-box{
+    animation: flip 4s ease infinite 2s;
+}
+
+ .flip-box-front {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     backface-visibility: hidden;
+     transition: all .4s ease;
+     top: 0;
+     left: 0;
+     border-radius: 10px;
  }
- .hero-box::after{
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    transition: all .3s ease;
+
+ .flip-box-front img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 10px;
  }
- .hero-box:hover::after{
-    background-color: rgba(0, 0, 0, 0.389);
+
+ .flip-box-back {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+     width: 100%;
+     top: 0;
+     left: 0;
+     height: 100%;
+     position: absolute;
+     backface-visibility: hidden;
+     transition: all .4s ease;
+     background: transparent;
+     transition: all .4s ease;
+     transform: rotateY(180deg);
+     background: rgba(255, 255, 255, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     border-radius: 10px;
+     padding: 0 1.5rem;
+     border: 1px solid rgba(255, 255, 255, 0.18);
  }
- .hero-box:hover img{
-    transform: scale(1.1);
+
+ .flip-box-back img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 10px;
  }
- .hero-box img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all .3s ease;
+.flip-box-back h1{
+    font-size: 2rem;
+    color: #fff;
+}
+ .flip-box-back p {
+     color: #fff;
+     line-height: 2.5rem;
+     font-size: 1.6rem;
+     margin-top: 1.5rem;
  }
+
  @media screen and (max-width:1170px) {
-    .hero-box {
-        width: 282px;
-        height: 282px;
-    }
-    .hero {
-        width: 940px;
-    }
+     .hero-box {
+         width: 282px;
+         height: 282px;
+     }
+
+     .hero {
+         width: 940px;
+     }
  }
+
  @media screen and (max-width:970px) {
-    .hero {
-        width: auto;
-        margin: 0 2rem;
-    }
-    .hero-header {
-        padding: 5rem 2rem;
-    }
+     .hero {
+         width: auto;
+         margin: 0 2rem;
+     }
+
+     .hero-header {
+         padding: 5rem 2rem;
+     }
  }
+
  @media screen and (max-width:940px) {
-    nav ul {
-        width: 80%;
-    }
+     nav ul {
+         width: 80%;
+     }
  }
+
  @media screen and (max-width:550px) {
-    .close {
-        margin-right: 6rem;
-    }
+     .close {
+         margin-right: 6rem;
+     }
  }
+
  @media screen and (max-width:650px) {
-    .hero-box {
-        width: 68%;
-        height: 32vh;
-    }
-    .hero-header h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 1.5rem 0;
-    }
+     .hero-box {
+         width: 68%;
+         height: 32vh;
+     }
+
+     .hero-header h1 {
+         font-size: 4rem;
+         font-weight: 700;
+         color: #fff;
+         margin: 1.5rem 0;
+     }
  }
+
  @media screen and (max-width:500px) {
-    .hero-box {
-        width: 90%;
-        height: 32vh;
-    }
+     .hero-box {
+         width: 90%;
+         height: 32vh;
+     }
  }
- @media screen and (max-width:0) {
- 
+
+ @media screen and (max-width:390px) {
+    .flip-box {
+        width: 250px;
+        height: 400px;
+    }
  }
