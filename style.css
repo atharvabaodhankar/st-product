@@ -239,17 +239,9 @@
      transition: all .4s ease;
      cursor: pointer;
      margin: 1.5rem 1.5rem;
+     /* animation: flip 4s ease infinite 2s; */
  }
 
-.flip-box-ourter:nth-child(1) .flip-box{
-    animation: flip 4s ease infinite 2s;
-}
-.flip-box-ourter:nth-child(2) .flip-box{
-    animation: flip 4s ease infinite 2s;
-}
-.flip-box-ourter:nth-child(3) .flip-box{
-    animation: flip 4s ease infinite 2s;
-}
 
  .flip-box-front {
      display: flex;
@@ -311,6 +303,98 @@
      font-size: 1.6rem;
      margin-top: 1.5rem;
  }
+#poll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+}
+.poll-header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 1.5rem;
+    text-align: left;
+    width: 500px;
+    margin-right: 5rem;
+}
+.poll-header h2{
+    font-size: 1.4rem;
+    background-color: var(--orange);
+    color: #fff;
+    font-weight: 700;
+    padding: .1rem .2rem;
+}
+.poll-header h1{
+    font-size: 5rem;
+    margin: 1.5rem 0;
+}
+.poll-header p{
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+.poll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+.poll-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.5rem 0;
+}
+.poll-box:nth-child(2) .progress-bar{
+    width: 80%;
+}
+.poll-box:nth-child(3) .progress-bar{
+    width: 75%;
+}
+.poll-box:nth-child(4) .progress-bar{
+    width: 50%;
+}
+
+.poll-box-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.poll-box-head h1:nth-child(1){
+    font-size: 1.7rem;
+}
+.poll-box-head h1:nth-child(2){
+    font-size: 1.7rem;
+}
+.progress-bar-outer{
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+    height: 2rem;
+    padding: 4px;
+    border-radius: 3rem;
+}
+.progress-bar{
+    width: 95%;
+    height: 100%;
+    background-color: var(--orange);
+    border-radius: 3rem;
+    position: relative;
+}
+.progress-bar span{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
 
  @media screen and (max-width:1170px) {
      .hero-box {
@@ -321,6 +405,20 @@
      .hero {
          width: 940px;
      }
+     #poll{
+        flex-direction: column;
+     }
+     
+     .poll{
+        margin-top: 6rem;
+     }
+     .poll-header {
+        width: 90%;
+        margin-right: 0rem;
+    }
+    .poll {
+        width: 90%;
+    }
  }
 
  @media screen and (max-width:970px) {
@@ -338,25 +436,29 @@
      nav ul {
          width: 80%;
      }
+     
  }
 
+ 
+  @media screen and (max-width:650px) {
+      .hero-box {
+          width: 68%;
+          height: 32vh;
+      }
+ 
+      .hero-header h1 {
+          font-size: 4rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 1.5rem 0;
+      }
+      .poll-header h1 {
+        font-size: 4rem;
+    }
+  }
  @media screen and (max-width:550px) {
      .close {
          margin-right: 6rem;
-     }
- }
-
- @media screen and (max-width:650px) {
-     .hero-box {
-         width: 68%;
-         height: 32vh;
-     }
-
-     .hero-header h1 {
-         font-size: 4rem;
-         font-weight: 700;
-         color: #fff;
-         margin: 1.5rem 0;
      }
  }
 
