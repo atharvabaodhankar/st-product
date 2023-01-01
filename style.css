@@ -903,6 +903,86 @@
     margin-top: 1.5rem;
     color: rgb(50, 50, 50);
 }
+/* Contact */
+#contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 6rem 0;
+}
+.contact-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+.contact-header h2{
+    font-size: 1.4rem;
+    color: #fff;
+    padding: .2rem .3rem;
+    background-color: var(--orange);
+}
+.contact-header h1{
+    font-size: 5rem;
+    margin-top: 1.5rem;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 900px;
+    flex-wrap: wrap;
+    background-color: #ff5416;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    padding-bottom: 3rem;
+}
+.contact input{
+    width: 45%;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 0 .5rem;
+    margin-top: 3rem;
+    border-radius: .5rem;
+}
+.contact input::placeholder{
+    font-size: 1.6rem;
+    color: rgba(128, 128, 128, 0.766);
+}
+.contact textarea{
+    border: none;
+    border-radius: .5rem;
+    height: 150px;
+    outline: none;
+    margin-top: 3rem;
+    width: 95%;
+    padding: 1rem .5rem;
+}
+.contact textarea::placeholder{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(128, 128, 128, 0.766);
+}
+.contact a{
+    font-size: 2rem;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    color: #fff;
+    margin-top: 3rem;
+    background-color: #BF40BF;
+    transition: all .3s ease;
+}
+.contact a:hover{
+    background-color: #943294;
+}
  @media screen and (max-width:1460px) {
     .team {
         display: flex;
@@ -1014,6 +1094,14 @@
      .hero-header {
          padding: 5rem 2rem;
      }
+     .contact-header {
+        padding: 0 2.5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .contact {
+        width: 650px;
+    }
  }
 
  @media screen and (max-width:940px) {
@@ -1035,6 +1123,12 @@
     .changes-box-desc{
         width: 100%;
         padding: 2.5rem 1.5rem;
+    }
+    .contact-header h1{
+        font-size: 4rem;
+    }
+    .contact {
+        width: 90%;
     }
  }
  @media screen and (max-width:650px) {
@@ -1107,6 +1201,9 @@
      .review-header h1 {
          font-size: 4rem;
      }
+     .contact input {
+        width: 95%;
+    }
  }
 
  @media screen and (max-width:390px) {
@@ -1116,5 +1213,8 @@
      }
      .pricing-box {
         width: 90%;
+    }
+    .contact-header h1 {
+        font-size: 3rem;
     }
  }
